@@ -89,3 +89,4 @@ Short rules learned the hard way on Days 1–7. `/new-site` and every round star
 66. **A sticky "revealed under the page" footer is always in view geometrically**: trigger its effects by scroll position, and put its record stop on an element after it, not on the sticky footer (Day 09).
 67. **GSAP `from()` in React effects can stick at the from-state** (strict-mode mount → kill → remount re-reads the half-set value): use `fromTo()` (Day 09).
 68. **Veo "start = end frame" loops still pop**: measure first vs last frame against a normal frame step and bake a short crossfade loop (12 frames) into the web file (Day 09).
+- **Never honour the OS reduce-motion setting; only `?static=1` disables motion.** It is ON by default on many Windows machines, so live sites opened as flat static pages. `prefersReducedMotion()` is `?static` only; CSS uses `html.is-static { … }` (set by the engine); `npm run check` fails on any `prefers-reduced-motion` / reduce `matchMedia`.
